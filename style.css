@@ -70,7 +70,69 @@ a{
 
 /*--Mattematik---------------------*/
 
-.numbers{
-    font-size: 30px;
+.wrapper{
+    display: grid;
+    grid-template-columns: 82% 18%;
+}
+
+.number-box{
+    font-size: 50px;
+    background-color: white;
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 15%;
+    margin: 10px 10px 0 10px;
+
+}
+
+.number-box h1{
     font-family: 'DynaPuff', cursive;
+    display: inline;
+    padding: 20px;
+}
+
+.options{
+    font-size: 55px;
+    margin-right: 10px;
+}
+
+.options h1{
+    font-family: 'DynaPuff', cursive;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+#opt1{
+    background-color: #26c6da;
+    transition: 1s;
+}
+
+#opt1:hover{
+    color: #26c6da;
+    background-color: white;
+}
+
+#opt2{
+    background-color: #f7f439;
+    transition: 1s;
+}
+
+#opt2:hover{
+    color: #f7f439;
+    background-color: white;
+}
+
+#opt3{
+    background-color: #fb63a7;
+    transition: 1s;
+}
+
+#opt3:hover{
+    color: #fb63a7;
+    background-color: white;
 }
