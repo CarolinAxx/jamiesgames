@@ -1,0 +1,43 @@
+/*--Google Fonts-------------------*/
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&family=Manrope&family=Silkscreen&display=swap');
+
+body{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*--Meny startsida------------------*/
+
+.container{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.meny{
+    border: 2px solid black;
+    margin-top: 10px;
+    width: 25rem;
+    height: 8rem;
+    justify-content: center;
+}
+
+.meny:hover{
+    background-color: aquamarine;
+    cursor: pointer;
+}
+
+.rubric{
+    text-align: center;
+    font-size: 40px;
+    font-family: 'DynaPuff', cursive;
+}
+
+.gamename{
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2%;
+    font-size: 28px;
+    font-family: 'Silkscreen', cursive;
+}
