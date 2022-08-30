@@ -32,8 +32,9 @@ body{
     background-image: url("./images/siffror.jpg");
 }
 
-.letters{
-    background-image: url("./images/bokstäver.jpg");
+.snake{
+    background-image: url("./images/snake.jpg");
+    background-size: inherit;
 }
 
 .balloons{
@@ -41,7 +42,7 @@ body{
 }
 
 .math:hover,
-.letters:hover,
+.snake:hover,
 .balloons:hover{
     background-size: cover;
 }
@@ -174,4 +175,40 @@ a{
 #opt3:hover{
     color: #fb63a7;
     background-color: white;
+}
+
+/*--Snake spel----------------------*/
+
+.snake-box{
+    background-color: white;
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 2%;
+    margin: 10px 10px 0 10px;
+    height: 28rem;
+}
+
+.score-box{
+    margin-right: 10px;
+    background-color: #fb63a7a8;
+    margin: 10px 10px 0 10px;
+    font-family: 'DynaPuff', cursive;
+}
+
+.scores{
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-size: 27px;
+    text-align: center;
+}
+
+.score-box h2{
+    padding: 12px;
+    border-radius: 5px;
+    color: rgb(81, 81, 81);
+}
+
+.score-box h1{
+    text-align: center;
+    font-size: 50px;
 }
