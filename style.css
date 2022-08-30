@@ -55,6 +55,16 @@ body{
   -webkit-text-fill-color: transparent;
 }
 
+.under-rubric{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'DynaPuff', cursive;
+    background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 .gamename{
     text-align: center;
     margin-top: 2rem;
