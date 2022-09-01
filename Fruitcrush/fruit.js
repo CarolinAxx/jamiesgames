@@ -9,6 +9,10 @@ var otherTile;
 
 window.onload = function(){
     startGame();
+
+    window.setInterval(function(){
+        crushFruit();
+    }, 100);
 }
 
 function randomFruit(){
@@ -85,4 +89,39 @@ function dragEnd(){
         otherTile.src = currImg;
     }
 
+}
+
+function crushFruit() {
+    crushThree();
+}
+
+function crushThree(){
+    //check rows.
+    for (let r = 0; r < row; r++){
+        for (let c = 0; c < cols -2; c++) {
+            let fruit1 = board[r][c];
+            let fruit2 = board[r][c+1];
+            let fruit3 = board[r][c+2];
+
+            if (fruit1.src == fruit2.src && fruit2.src == fruit3.src && !fruit1.src.includes("blank")){
+                fruit1.src = "../images/blank.png";
+                fruit2.src = "../images/blank.png";
+                fruit3.src = "../images/blank.png";
+                console.log(fruit1.src)
+            }
+        }
+    }
+
+    for (let c = 0; c < cols; c++){
+        for (let r = 0; r < row-2; r++) {
+            let fruit1 = board[r][c];
+            let fruit2 = board[r+1][c];
+            let fruit3 = board[r+2][c];
+            if (fruit1.src == fruit2.src && fruit2.src == fruit3.src && !fruit1.src.includes("blank")){
+                fruit1.src = "../images/blank.png";
+                fruit2.src = "../images/blank.png";
+                fruit3.src = "../images/blank.png";
+            }
+        }
+    }
 }
