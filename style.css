@@ -178,6 +178,7 @@ a{
     background-color: #fb63a7a8;
     margin: 10px 10px 0 10px;
     font-family: 'DynaPuff', cursive;
+    border-radius: 5px;
 }
 
 .scores{
@@ -207,7 +208,6 @@ canvas{
 /*--Candy Crush-------------------*/
 
 .game-box{
-    background-color: white;
     border-radius: 3px;
     text-align: center;
     padding: 2%;
