@@ -12,6 +12,8 @@ window.onload = function(){
 
     window.setInterval(function(){
         crushFruit();
+        slideFruit();
+        generateFruit();
     }, 100);
 }
 
@@ -66,6 +68,10 @@ function dragDrop(){
 
 function dragEnd(){
 
+    if (currTile.src.includes("blank") || otherTile.src.includes("blank")) {
+        return;
+    }
+
     let currCoords = currTile.id.split("-");
     let r = parseInt(currCoords[0]);
     let c = parseInt(currCoords[1]);
@@ -87,12 +93,22 @@ function dragEnd(){
         let otherImg = otherTile.src;
         currTile.src = otherImg;
         otherTile.src = currImg;
+
+        let validMove = checkValid();
+        if (!validMove) {
+            let currImg = currTile.src;
+            let otherImg = otherTile.src;
+            currTile.src = otherImg;
+            otherTile.src = currImg;
+        }
     }
 
 }
 
 function crushFruit() {
+    // crushFour(); osv
     crushThree();
+    document.getElementById("score").innerText = score;
 }
 
 function crushThree(){
@@ -107,7 +123,8 @@ function crushThree(){
                 fruit1.src = "../images/blank.png";
                 fruit2.src = "../images/blank.png";
                 fruit3.src = "../images/blank.png";
-                console.log(fruit1.src)
+                
+                score += 30;
             }
         }
     }
@@ -121,7 +138,61 @@ function crushThree(){
                 fruit1.src = "../images/blank.png";
                 fruit2.src = "../images/blank.png";
                 fruit3.src = "../images/blank.png";
+
+                score += 30;
             }
+        }
+    }
+}
+
+
+function checkValid(){
+    for (let r = 0; r < row; r++){
+        for (let c = 0; c < cols -2; c++) {
+            let fruit1 = board[r][c];
+            let fruit2 = board[r][c+1];
+            let fruit3 = board[r][c+2];
+
+            if (fruit1.src == fruit2.src && fruit2.src == fruit3.src && !fruit1.src.includes("blank")){
+               return true;
+            }
+        }
+    }
+
+    for (let c = 0; c < cols; c++){
+        for (let r = 0; r < row-2; r++) {
+            let fruit1 = board[r][c];
+            let fruit2 = board[r+1][c];
+            let fruit3 = board[r+2][c];
+            if (fruit1.src == fruit2.src && fruit2.src == fruit3.src && !fruit1.src.includes("blank")){
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
+function slideFruit(){
+    for (let c = 0; c < cols; c++){
+        let ind = row - 1;
+        for (let r = cols-1; r>= 0; r--){
+            if (!board[r][c].src.includes("blank")) {
+                board[ind][c].src = board[r][c].src;
+                ind -= 1;
+            }
+        }
+
+        for (let r = ind; r >= 0; r--){
+            board[r][c].src = "../images/blank.png";
+        }
+    }
+}
+
+function generateFruit() {
+    for (let c = 0; c < cols; c++){
+        if  (board[0][c].src.includes("blank")){
+            board[0][c].src = "../images/" + randomFruit() + ".png";
         }
     }
 }
