@@ -3,6 +3,7 @@ var board = [];
 var row = 9;
 var cols = 9;
 var score = 0;
+var audio = document.getElementById("myAudio");
 
 var currTile;
 var otherTile;
@@ -124,13 +125,14 @@ function crushThree(){
                 fruit2.src = "../images/blank.png";
                 fruit3.src = "../images/blank.png";
                 
-                score += 30;
+                score += 10;
+                audio.play();
             }
         }
     }
 
     for (let c = 0; c < cols; c++){
-        for (let r = 0; r < row-2; r++) {
+        for (let r = 0; r < row -2; r++) {
             let fruit1 = board[r][c];
             let fruit2 = board[r+1][c];
             let fruit3 = board[r+2][c];
@@ -139,12 +141,12 @@ function crushThree(){
                 fruit2.src = "../images/blank.png";
                 fruit3.src = "../images/blank.png";
 
-                score += 30;
+                score += 10;
+                audio.play();
             }
         }
     }
 }
-
 
 function checkValid(){
     for (let r = 0; r < row; r++){
